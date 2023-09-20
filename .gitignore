@@ -1,0 +1,13 @@
+# Gitignore for a LaTeX project
+# ==============================
+#
+
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls

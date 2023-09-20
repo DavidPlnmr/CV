@@ -1,0 +1,196 @@
+% CV in LaTeX
+\documentclass[12pt]{article} % article with 12pt font
+
+%% PACKAGES %%
+\usepackage[french]{babel} % multilingual support
+\usepackage[utf8]{inputenc} % encoding
+\usepackage{blindtext} % to insert blind text
+
+% Set the default font
+\usepackage{tgpagella}
+
+% set the page layout
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=20mm,
+    %right=
+    %bottom=
+    top=15mm}
+
+% empty the headers, footers, pagenumbers…
+\pagestyle{empty}
+
+% Custom sectioning with secsty
+\usepackage{sectsty}
+\sectionfont{%                        
+    \large % make sections smaller
+    \fontfamily{qag}\selectfont % change font family
+    \sectionrule{0pt}{0pt}{-5pt}{1pt} % insert a thin rule
+}
+
+%% MACROS %%
+% size of the boxes used to align text
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+
+% vertical space separator between entries
+\newcommand{\sepspace}{\vspace*{1em}}
+
+% name
+\newcommand{\name}[1]{
+    \Huge % font size
+    \fontfamily{phv}\selectfont % font family
+    % print name centered and bold
+    \begin{center} \textbf{#1} \end{center}\par
+    % back to normal size and font
+    \normalsize\normalfont}
+
+% motto
+\newcommand{\motto}[1]{
+    \large % font size
+    \fontfamily{phv}\selectfont % font family
+    % print motto centered and slanted
+    \begin{center} \textsl{#1}\end{center}\par
+    % back to normal size and font
+    \normalsize \normalfont}
+
+% personal information
+\newcommand{\info}[2]{%
+    % set specific indentation for personal information
+    \noindent\hangindent=2em\hangafter=0%
+    \begin{tabular}{@{}p{4cm}p{\linewidth}@{}}
+        \textsl{#1}: & #2 \\
+    \end{tabular}\par%
+}
+
+
+
+% other experiences
+\newcommand{\otherxp}[4]{
+    \noindent  \textbf{#1}
+    % at the right the duration
+    \hfill
+    \framebox{% duration inside a frame box
+        \parbox{10em}{%
+            \centering\textbf{#2}}} \par
+    % new paragraph with the school in italics
+    \noindent \textit{#3} \par
+    % description with no hanging and in smaller text
+    \vspace*{0.5em}
+    \noindent\hangindent=2em\hangafter=0 \small #4
+    %back to normal size
+    \normalsize \par}
+
+
+% language level
+\newcommand{\lan}[2]{
+    % set specific indentation for personal information
+    \noindent\hangindent=2em\hangafter=0
+    % create a box to align two pieces of text
+    \parbox{\spacebox}{%
+        \textbf{#1}} % bold font entry name
+    #2 \par}    % entry value
+
+
+% education entry
+\newcommand{\education}[4]{
+    % name of the studies
+    \noindent  \textbf{#1}
+    % at the right the duration
+    \hfill
+    \framebox{% duration inside a frame box
+        \parbox{10em}{%
+            \centering\textbf{#2}}} \par
+    % new paragraph with the school in italics
+    \noindent \textit{#3} \par
+    % description with no hanging and in smaller text
+    \vspace*{0.5em}
+    \noindent\hangindent=2em\hangafter=0 \small #4
+    %back to normal size
+    \normalsize \par}
+
+% work experience
+\newcommand{\work}[4]{
+    % name of the work
+    \noindent  \textbf{#1}
+    % at the right the duration
+    \hfill
+    \framebox{% duration inside a frame box
+        \parbox{10em}{%
+            \centering\textbf{#2}}} \par
+    % new paragraph with the school in italics
+    \noindent \textit{#3} \par
+    % description with no hanging and in smaller text
+    \vspace*{0.5em}
+    \noindent\hangindent=2em\hangafter=0 \small #4
+    %back to normal size
+    \normalsize \par}
+
+\begin{document}
+
+% name and motto
+\name{David Paulino Marques}
+\vspace*{-10pt}
+\motto{Diplômé d'un Bachelor of Science en Informatique de gestion}
+% personal information
+\sepspace
+\info{Date de naissance}{25.08.2001}
+\info{E-mail}{\texttt{david.plnmr@gmail.com}}
+\info{Téléphone}{+41 76 340 60 11}
+\info{Adresse}{39 Promenade de l'Europe, 1203 Genève}
+\info{Nationalité}{Portugaise-Permis C}
+
+\sepspace
+
+\begin{minipage}{0.9\textwidth} % Crée un paragraphe spécifique sur toute la largeur de la page
+    \centering
+    Autonome, précis et efficace, je suis constamment animé par le désir de m'améliorer. Ma capacité à communiquer efficacement et à comprendre les besoins des autres constitue une grande force que je mets à profit dans tous les aspects de mon travail.
+\end{minipage}
+
+
+
+% work experience
+\section*{Expériences professionnelles}
+\work{Animation et coaching}{Oct. 2022--Juin 2023}{HEG-UNIGE}{Coding Dojo - Aide et support pour étudiants de l'HEG-Genève et de l'UNIGE en Informatique.
+    \newline Organisation de cours de programmation (Python, Java, IOT, etc.), appui, aides aux TPs.}
+
+% education
+\section*{Formations}
+\education{Bachelor of Science en Informatique de gestion}{Sept. 2021--Juil. 2023}{HEG-Genève}{Compétences acquises : Oracle, PL/SQL, NoSQL, Java, Python, C\#, HTML5, CSS, Business Intelligence, Data Science, Machine Learning, UML, SQL, SAP, Numpy, Pandas, Sklearn, Django, POO, Docker, CI/CD, DevOps, Git, Linux, MacOS, Windows, Suite Office}
+\sepspace
+\education{Diplôme de Technicien ES en Informatique}{Août 2019--Juin 2021}{Centre de formation professionnelle Technique}{Compétences acquises : API REST, Python, HTML5, CSS, PHP, C\#, SQL, Modélisation UML, JavaScript, POO, Git, LaTeX, Développement de logiciels, Tests unitaires.}
+\sepspace
+\education{CFC Informaticien en développement d'applications}{Août 2016--Juin 2020}{Centre de formation professionnelle Technique}{Compétences acquises : Python, HTML5, CSS, PHP, C\#, SQL, Modélisation UML, JavaScript, POO, Git, Développement de logiciels, Suite Office.}
+
+% other xp
+\section*{Autres expériences}
+\otherxp{Analyse de données dans le football (xG)}{2022-2023}{Travail de Bachelor}{Analyse et optimisation des xG dans le football. Cette métrique permet d'indiquer la chance qu'un tir soit transformé en but. Recherche, compréhension et visualisation d'un jeu de données de tirs dans le football. Analyse, exploration et transformation des données à la recherche de corrélations ou d'aberrations. Comparaison et optimisation de modèle de Machine Learning pour prédire les xG.}
+\sepspace
+\otherxp{Implémentation d'un backend Django}{2022-2023}{Tina Coiffure}{Application web de gestion de réservation pour un salon de coiffure. J'ai été en charge du développement du backend entier en Python avec le framework Django. Cette application contient plusieurs fonctionnalités comme la création/connexion de compte client, gestion des permissions, prise de rendez-vous dynamique, etc. J'ai appliqué des principes de DevOps pour garantir la qualité du code (tests unitaires) et pour automatiser le déploiement du backend sur un serveur de test. (CI/CD).}
+\sepspace
+\otherxp{Création d'une application web}{2018-2019}{International Social Service}{Création d'un livre virtuel et d'un système de gestion d'un orphelinat sous Laravel pour l'association ISS. L'application vise à faciliter la gestion des orphelinats et des enfants qui y vivent. Le livre virtuel permet de créer des liens entre les enfants et les familles d'accueil et de garder une trace de leurs activités. Le projet a pour but d'être déployé dans plusieurs orphelinats du Burkina Faso, du Vietnam et du Bangladesh.}
+
+
+% languages
+\section*{Langages}
+\lan{Français}{Courant}
+\lan{Portugais}{Langue maternelle}
+\lan{Anglais}{Études et loisirs}
+
+\section*{Centres d'intérêts}
+\begin{itemize}
+    \item Football
+    \item Basket-ball
+    \item Jeux vidéos
+    \item Musique
+    \item Informatique
+    \item Développement
+    \item Machine Learning
+    \item Data Science
+\end{itemize}
+
+
+\end{document}
+
+
