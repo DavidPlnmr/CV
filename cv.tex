@@ -7,6 +7,8 @@
 \usepackage[T1]{fontenc} % font encoding
 \usepackage{url} % for urls
 
+\usepackage{multicol}
+\usepackage{enumitem}
 
 % Set the default font
 \usepackage{tgpagella}
@@ -154,43 +156,56 @@
 
 % skills
 \section*{Compétences}
-\skill{\textbf{Développement logiciel}}
-\skill{\begin{itemize}
-        \item Python, Java, C\#, POO
+% \skill{\textbf{Développement logiciel}}
+% \skill{\begin{itemize}
+%         \item Python, Java, C\#, POO
+%     \end{itemize}
+% }
+% \skill{\textbf{Développement web}
+%     \begin{itemize}
+%         \item HTML5, CSS, JavaScript, PHP, Django, Laravel
+%     \end{itemize}
+% }
+% \skill{\textbf{Base de données}
+%     \begin{itemize}
+%         \item SQL, NoSQL
+%     \end{itemize}
+% }
+% \skill{\textbf{Data Science}}
+% \skill{\begin{itemize}
+%         \item Numpy, Pandas, Sklearn, Matplotlib, Seaborn
+%     \end{itemize}
+% }
+% \skill{\textbf{DevOps}}
+% \skill{\begin{itemize}
+%         \item Docker, CI/CD, Tests unitaires, Git
+%     \end{itemize}
+% }
+% \skill{\textbf{Compétences complémentaires}}
+% \skill{\begin{itemize}
+%         \item UML, SAP, Linux, MacOS, Windows, Suite Office, LaTeX
+%     \end{itemize}
+% }
+
+
+\begin{multicols}{2}
+    \begin{itemize}[label=--]
+        % Pour ajouter une nouvelle section de compétences
+        % il faut copier la ligne item
+        \item \begin{minipage}[t]{\linewidth}\textbf{Développement logiciel:} Python, Java, C\#, POO\end{minipage}
+        \item \begin{minipage}[t]{\linewidth}\textbf{Développement web:} HTML5, CSS, JavaScript, PHP, Django, Laravel\end{minipage}
+        \item \begin{minipage}[t]{\linewidth}\textbf{Base de données:} SQL, NoSQL\end{minipage}
+        \item \begin{minipage}[t]{\linewidth}\textbf{Data Science:} Numpy, Pandas, Sklearn, Matplotlib, Seaborn\end{minipage}
+        \item \begin{minipage}[t]{\linewidth}\textbf{DevOps:} Docker, CI/CD, Tests unitaires, Git\end{minipage}
+        \item \begin{minipage}[t]{\linewidth}\textbf{Compétences complémentaires:} UML, SAP, Linux, MacOS, Windows, Suite Office, LaTeX\end{minipage}
     \end{itemize}
-}
-\skill{\textbf{Développement web}
-    \begin{itemize}
-        \item HTML5, CSS, JavaScript, PHP, Django, Laravel
-    \end{itemize}
-}
-\skill{\textbf{Base de données}
-    \begin{itemize}
-        \item SQL, NoSQL
-    \end{itemize}
-}
-\skill{\textbf{Data Science}}
-\skill{\begin{itemize}
-        \item Numpy, Pandas, Sklearn, Matplotlib, Seaborn
-    \end{itemize}
-}
-\skill{\textbf{DevOps}}
-\skill{\begin{itemize}
-        \item Docker, CI/CD, Tests unitaires, Git
-    \end{itemize}
-}
-\skill{\textbf{Compétences complémentaires}}
-\skill{\begin{itemize}
-        \item UML, SAP, Linux, MacOS, Windows, Suite Office, LaTeX
-    \end{itemize}
-}
+\end{multicols}
 
 % work experience
 \section*{Expériences professionnelles}
 \work{Animation et coaching}{Oct. 2022--Juin 2023}{HEG-UNIGE}{Coding Dojo - Aide et support pour étudiants de l'HEG-Genève et de l'UNIGE en Informatique.
     \newline Organisation de cours de programmation (Python, Java, IOT, etc.), appui, aides aux TPs.}
 
-\newpage
 % education
 \section*{Formations}
 \education{Bachelor of Science en Informatique de gestion}{Sept. 2021--Juil. 2023}{HEG - Genève}
