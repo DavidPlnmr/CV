@@ -7,6 +7,8 @@
 \usepackage[T1]{fontenc} % font encoding
 \usepackage{url} % for urls
 
+\usepackage{multicol} % multiple columns
+
 % Set the default font
 \usepackage{tgpagella}
 
@@ -83,6 +85,7 @@
     %back to normal size
     \normalsize \par}
 
+\newcommand{\skill}[1]{\noindent #1 \par}
 
 % language level
 \newcommand{\lan}[2]{
@@ -95,7 +98,7 @@
 
 
 % education entry
-\newcommand{\education}[4]{
+\newcommand{\education}[3]{
     % name of the studies
     \noindent  \textbf{#1}
     % at the right the duration
@@ -107,9 +110,9 @@
     \noindent \textit{#3} \par
     % description with no hanging and in smaller text
     \vspace*{0.5em}
-    \noindent\hangindent=2em\hangafter=0 \small #4
-    %back to normal size
-    \normalsize \par}
+    }
+
+
 
 % work experience
 \newcommand{\work}[4]{
@@ -136,6 +139,7 @@
 \motto{Diplômé d'un Bachelor of Science en Informatique de gestion}
 % personal information
 \sepspace
+
 \info{Date de naissance}{25.08.2001}
 \info{E-mail}{\texttt{david.plnmr@gmail.com}}
 \info{Téléphone}{+41 76 340 60 11}
@@ -149,47 +153,75 @@
     Autonome, précis et efficace, je suis constamment animé par le désir de m'améliorer. Ma capacité à communiquer efficacement et à comprendre les besoins des autres constitue une grande force que je mets à profit dans tous les aspects de mon travail.
 \end{minipage}
 
-
+% skills
+\section*{Compétences}
+\skill{\textbf{Développement logiciel}}
+\skill{\begin{itemize}
+        \item Python, Java, C\#, POO
+    \end{itemize}
+}
+\skill{\textbf{Développement web}
+    \begin{itemize}
+        \item HTML5, CSS, JavaScript, PHP, Django, Laravel
+    \end{itemize}
+}
+\skill{\textbf{Base de données}
+    \begin{itemize}
+        \item SQL, NoSQL
+    \end{itemize}
+}
+\skill{\textbf{Data Science}}
+\skill{\begin{itemize}
+        \item Numpy, Pandas, Sklearn, Matplotlib, Seaborn
+    \end{itemize}
+}
+\skill{\textbf{DevOps}}
+\skill{\begin{itemize}
+        \item Docker, CI/CD, Tests unitaires, Git
+    \end{itemize}
+}
+\skill{\textbf{Compétences complémentaires}}
+\skill{\begin{itemize}
+        \item UML, SAP, Linux, MacOS, Windows, Suite Office, LaTeX
+    \end{itemize}
+}
 
 % work experience
 \section*{Expériences professionnelles}
 \work{Animation et coaching}{Oct. 2022--Juin 2023}{HEG-UNIGE}{Coding Dojo - Aide et support pour étudiants de l'HEG-Genève et de l'UNIGE en Informatique.
     \newline Organisation de cours de programmation (Python, Java, IOT, etc.), appui, aides aux TPs.}
 
+\newpage
 % education
 \section*{Formations}
-\education{Bachelor of Science en Informatique de gestion}{Sept. 2021--Juil. 2023}{HEG-Genève}{Compétences acquises : Oracle, PL/SQL, NoSQL, Java, Python, C\#, HTML5, CSS, Business Intelligence, Data Science, Machine Learning, UML, SQL, SAP, Numpy, Pandas, Sklearn, Django, POO, Docker, CI/CD, DevOps, Tests unitaires, Git, Linux, MacOS, Windows, Suite Office.}
+\education{Bachelor of Science en Informatique de gestion}{Sept. 2021--Juil. 2023}{HEG - Genève}
 \sepspace
-\education{Diplôme de Technicien ES en Informatique}{Août 2019--Juin 2021}{Centre de formation professionnelle Technique}{Compétences acquises : API REST, Python, C, HTML5, CSS, PHP, C\#, SQL, Modélisation UML, JavaScript, POO, Git, LaTeX, Développement de logiciels, Tests unitaires.}
+\education{Diplôme de Technicien ES en Informatique}{Août 2019--Juin 2021}{Centre de formation professionnelle Technique - Genève}
 \sepspace
-\education{CFC Informaticien en développement d'applications}{Août 2016--Juin 2020}{Centre de formation professionnelle Technique}{Compétences acquises : Python, HTML5, CSS, PHP, C\#, SQL, Modélisation UML, JavaScript, POO, Git, Développement de logiciels, Suite Office.}
+\education{CFC Informaticien en développement d'applications}{Août 2016--Juin 2020}{Centre de formation professionnelle Technique - Genève}
 
 % other xp
 \section*{Autres expériences}
-\otherxp{Analyse de données dans le football (xG)}{2022-2023}{Travail de Bachelor}{Analyse et optimisation des xG dans le football. Cette métrique permet d'indiquer la chance qu'un tir soit transformé en but. Recherche, compréhension et visualisation d'un jeu de données de tirs dans le football. Analyse, exploration et transformation des données à la recherche de corrélations ou d'aberrations. Comparaison et optimisation de modèle de Machine Learning pour prédire les xG.}
+\otherxp{Analyse de données dans le football}{2022-2023}{Travail de Bachelor}{Analyse et optimisation des expected goals dans le football.}
 \sepspace
-\otherxp{Implémentation d'un backend Django}{2022-2023}{Tina Coiffure}{Application web de gestion de réservation pour un salon de coiffure. J'ai été en charge du développement du backend entier en Python avec le framework Django. Cette application contient plusieurs fonctionnalités comme la création/connexion de compte client, gestion des permissions, prise de rendez-vous dynamique, etc. J'ai appliqué des principes de DevOps pour garantir la qualité du code (tests unitaires) et pour automatiser le déploiement du backend sur un serveur de test. (CI/CD).}
+\otherxp{Implémentation d'un backend Django}{2022-2023}{Tina Coiffure}{Application web de gestion de réservation pour un salon de coiffure. }
 \sepspace
-\otherxp{Création d'une application web}{2018-2019}{International Social Service}{Création d'un livre virtuel et d'un système de gestion d'un orphelinat sous Laravel pour l'association ISS. L'application vise à faciliter la gestion des orphelinats et des enfants qui y vivent. Le livre virtuel permet de créer des liens entre les enfants et les familles d'accueil et de garder une trace de leurs activités. Le projet a pour but d'être déployé dans plusieurs orphelinats du Burkina Faso, du Vietnam et du Bangladesh.}
+\otherxp{Création d'une application web}{2018-2019}{International Social Service}{Création d'un livre virtuel et d'un système de gestion d'un orphelinat sous Laravel pour l'association ISS. }
 
 
 % languages
 \section*{Langues}
-\lan{Français}{Courant}
+\lan{Français}{Langue maternelle}
 \lan{Portugais}{Langue maternelle}
-\lan{Anglais}{Études et loisirs}
+\lan{Anglais}{C1}
 
-\section*{Centres d'intérêts}
+\section*{Centres d'intérêt}
 \begin{itemize}
     \item Football
-    \item Basket-ball
     \item Jeux vidéos
     \item Musique
-    \item Informatique
-    \item Développement
-    \item Machine Learning
-    \item Data Science
 \end{itemize}
+
 
 
 \end{document}
